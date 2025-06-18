@@ -154,6 +154,110 @@
             margin-bottom: 1rem;
         }
 
+        .team-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #764ba2;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .member-role {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .member-details {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .mentor-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .mentor-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .mentor-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mentor-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .mentor-role {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .mentor-details {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
         .tech-stack {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -241,6 +345,10 @@
             .feature-grid {
                 grid-template-columns: 1fr;
             }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -258,50 +366,83 @@
     </header>
 
     <div class="container">
-    <!-- Home Section -->
-    <section id="home" class="page-section">
-        <div class="hero">
-            <h1>Unified AI-Enhanced Elderly Monitoring System</h1>
-            <p>Revolutionary hybrid system combining sensor-based vitals tracking with AI-powered passive monitoring to ensure elderly safety and health—both at home and remotely.</p>
-            <a href="features.html" class="cta-button">Explore Features</a>
-        </div>
+        <!-- Home Section -->
+        <section id="home" class="page-section">
+            <div class="hero">
+                <h1>Unified AI-Enhanced Elderly Monitoring System</h1>
+                <p>Revolutionary hybrid system combining sensor-based vitals tracking with AI-powered passive monitoring to ensure elderly safety and health—both at home and remotely.</p>
+                <a href="features.html" class="cta-button">Explore Features</a>
+            </div>
 
-        <div class="features">
-            <h2>System Overview</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🫀</div>
-                    <h3>Vitals Monitoring</h3>
-                    <p>Real-time heart rate, SpO2, and temperature tracking using advanced sensors like MAX30102 and DS18B20.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📷</div>
-                    <h3>AI Vision Analysis</h3>
-                    <p>Passive camera monitoring with AI detection for facial pain, drowsiness, and fall detection using OpenCV.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">☁️</div>
-                    <h3>Cloud Integration</h3>
-                    <p>Seamless data upload to Firebase or ThingSpeak with real-time dashboard and automated alerts.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Smart Alerts</h3>
-                    <p>Instant SMS/email notifications via IFTTT or GSM module when health thresholds are breached.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔋</div>
-                    <h3>Portable Design</h3>
-                    <p>Battery-powered wearable unit with 3.7V Li-ion battery and TP4056 charging module.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Home Integration</h3>
-                    <p>Dual monitoring system with portable vitals tracker and fixed room monitoring unit.</p>
+            <div class="features">
+                <h2>System Overview</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🫀</div>
+                        <h3>Vitals Monitoring</h3>
+                        <p>Real-time heart rate, SpO2, and temperature tracking using advanced sensors like MAX30102 and DS18B20.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📷</div>
+                        <h3>AI Vision Analysis</h3>
+                        <p>Passive camera monitoring with AI detection for facial pain, drowsiness, and fall detection using OpenCV.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">☁️</div>
+                        <h3>Cloud Integration</h3>
+                        <p>Seamless data upload to Firebase or ThingSpeak with real-time dashboard and automated alerts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Smart Alerts</h3>
+                        <p>Instant SMS/email notifications via IFTTT or GSM module when health thresholds are breached.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔋</div>
+                        <h3>Portable Design</h3>
+                        <p>Battery-powered wearable unit with 3.7V Li-ion battery and TP4056 charging module.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>Home Integration</h3>
+                        <p>Dual monitoring system with portable vitals tracker and fixed room monitoring unit.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <div class="team-section">
+                <h2>Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-icon">👨‍💻</div>
+                        <h3>Gokul P</h3>
+                        <p class="member-role">Developer</p>
+                        <p class="member-details">23-27 CSE-AI<br>Adi Shankara Institute of Engineering and Technology</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-icon">👩‍💻</div>
+                        <h3>Devika P Sajith</h3>
+                        <p class="member-role">Developer</p>
+                        <p class="member-details">23-27 CSE-AI<br>Adi Shankara Institute of Engineering and Technology</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-icon">👩‍💻</div>
+                        <h3>Ashna Thajudheen</h3>
+                        <p class="member-role">Developer</p>
+                        <p class="member-details">23-27 CSE-AI<br>Adi Shankara Institute of Engineering and Technology</p>
+                    </div>
+                </div>
+                
+                <div class="mentor-section">
+                    <div class="mentor-card">
+                        <div class="mentor-icon">👩‍🏫</div>
+                        <h3>Dr. Amrutha Muralidharan Nair</h3>
+                        <p class="mentor-role">Project Mentor</p>
+                        <p class="mentor-details">Associate Professor<br>Adi Shankara Institute of Engineering and Technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -316,7 +457,7 @@
     <script>
         // Add smooth scrolling and animations
         document.addEventListener('scroll', function() {
-            const cards = document.querySelectorAll('.feature-card, .tech-category');
+            const cards = document.querySelectorAll('.feature-card, .tech-category, .team-member, .mentor-card');
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
                 if (rect.top < window.innerHeight - 100) {
@@ -328,7 +469,7 @@
 
         // Initialize card animations
         window.addEventListener('load', function() {
-            const cards = document.querySelectorAll('.feature-card, .tech-category');
+            const cards = document.querySelectorAll('.feature-card, .tech-category, .team-member, .mentor-card');
             cards.forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';

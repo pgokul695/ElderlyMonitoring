@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - Unified AI-Enhanced Elderly Monitoring System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .tech-stack {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-stack h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #764ba2;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-category h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .tech-list li {
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .tech-list li:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .tech-details {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .detail-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .detail-card p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .spec-table th, .spec-table td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(118, 75, 162, 0.2);
+        }
+
+        .spec-table th {
+            background: rgba(118, 75, 162, 0.1);
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .workflow-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .workflow-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #764ba2;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .workflow-step {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .workflow-step h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .workflow-step p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .architecture-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .architecture-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #764ba2;
+        }
+
+        .architecture-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .architecture-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .tech-grid, .detail-grid, .workflow-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-category, .detail-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🧓👩‍⚕️ ElderCare AI</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="technology.html" class="active">Technology</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Advanced Technology Stack</h1>
+            <p>Cutting-edge integration of IoT sensors, AI algorithms, and cloud computing for comprehensive elderly monitoring</p>
+        </div>
+
+        <div class="tech-stack">
+            <h2>Technology Components</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3>🔧 Hardware Components</h3>
+                    <ul class="tech-list">
+                        <li>ESP32 - Main microcontroller with Wi-Fi & Bluetooth</li>
+                        <li>MAX30102 - Heart rate & SpO2 sensor</li>
+                        <li>DS18B20 - Digital temperature sensor</li>
+                        <li>SIM800L - GSM/GPRS communication module</li>
+                        <li>Raspberry Pi 4 - AI processing unit</li>
+                        <li>ESP32-CAM - Camera module with Wi-Fi</li>
+                        <li>3.7V Li-ion battery with TP4056 charging</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3>🧠 AI & Machine Learning</h3>
+                    <ul class="tech-list">
+                        <li>OpenCV - Computer vision library</li>
+                        <li>MediaPipe - Face & pose detection framework</li>
+                        <li>TensorFlow Lite - On-device ML inference</li>
+                        <li>Scikit-learn - Anomaly detection algorithms</li>
+                        <li>Custom CNN - Emotion recognition models</li>
+                        <li>FER-2013 dataset - Facial expression training</li>
+                        <li>YOLO - Real-time object detection</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3>☁️ Cloud & Connectivity</h3>
+                    <ul class="tech-list">
+                        <li>Firebase - Real-time database & hosting</li>
+                        <li>ThingSpeak - IoT data analytics platform</li>
+                        <li>IFTTT - Automation & integration platform</li>
+                        <li>Twilio - SMS & communication services</li>
+                        <li>Wi-Fi 802.11b/g/n - Primary connectivity</li>
+                        <li>GSM/GPRS - Backup communication</li>
+                        <li>MQTT - Low-latency messaging protocol</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3>💻 Software Development</h3>
+                    <ul class="tech-list">
+                        <li>Arduino IDE - ESP32 firmware development</li>
+                        <li>Python 3.8+ - AI/ML model development</li>
+                        <li>JavaScript/Node.js - Web dashboard</li>
+                        <li>HTML5/CSS3 - User interface design</li>
+                        <li>Firebase Functions - Serverless backend</li>
+                        <li>pyttsx3 - Text-to-speech synthesis</li>
+                        <li>Flask/FastAPI - REST API development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-details">
+            <h2 style="text-align: center; color: #764ba2; margin-bottom: 3rem;">Technical Specifications</h2>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <h3>Sensor Specifications</h3>
+                    <p>High-precision medical-grade sensors for accurate vital sign monitoring.</p>
+                    <table class="spec-table">
+                        <tr><th>Component</th><th>Specification</th></tr>
+                        <tr><td>MAX30102</td><td>Heart Rate: ±2 BPM, SpO2: ±2%</td></tr>
+                        <tr><td>DS18B20</td><td>Temperature: ±0.5°C accuracy</td></tr>
+                        <tr><td>ESP32</td><td>240MHz dual-core, 520KB RAM</td></tr>
+                        <tr><td>Camera</td><td>2MP, 1600x1200, 30fps</td></tr>
+                        <tr><td>Battery</td><td>3.7V 2000mAh Li-ion</td></tr>
+                    </table>
+                </div>
+
+                <div class="detail-card">
+                    <h3>AI Model Performance</h3>
+                    <p>Machine learning models optimized for real-time elderly monitoring.</p>
+                    <table class="spec-table">
+                        <tr><th>Model</th><th>Accuracy</th></tr>
+                        <tr><td>Face Detection</td><td>Testing</td></tr>
+                        <tr><td>Emotion Recognition</td><td>Testing</td></tr>
+                        <tr><td>Fall Detection</td><td>Testing</td></tr>
+                        <tr><td>Drowsiness Detection</td><td>Testing</td></tr>
+                        <tr><td>Pain Detection</td><td>Testing</td></tr>
+                    </table>
+                </div>
+
+                <div class="detail-card">
+                    <h3>System Performance</h3>
+                    <p>Real-time processing capabilities and system efficiency metrics.</p>
+                    <table class="spec-table">
+                        <tr><th>Metric</th><th>Value</th></tr>
+                        <tr><td>Data Processing</td><td>Real-time</td></tr>
+                        <tr><td>Battery Life</td><td>12-16 hours</td></tr>
+                        <tr><td>Wi-Fi Range</td><td>100m indoor</td></tr>
+                        <tr><td>Alert Response</td><td><2 seconds</td></tr>
+                        <tr><td>Data Storage</td><td>Cloud + Local</td></tr>
+                    </table>
+                </div>
+
+                <div class="detail-card">
+                    <h3>Communication Protocols</h3>
+                    <p>Multiple communication channels for reliable data transmission.</p>
+                    <table class="spec-table">
+                        <tr><th>Protocol</th><th>Purpose</th></tr>
+                        <tr><td>Wi-Fi</td><td>Primary data transmission</td></tr>
+                        <tr><td>GSM/GPRS</td><td>Backup communication</td></tr>
+                        <tr><td>MQTT</td><td>IoT messaging</td></tr>
+                        <tr><td>HTTP/HTTPS</td><td>Web services</td></tr>
+                        <tr><td>SMS</td><td>Emergency alerts</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="workflow-section">
+            <h2>System Workflow</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h4>Data Collection</h4>
+                    <p>Sensors continuously monitor vital signs while cameras capture visual data for AI analysis.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h4>AI Processing</h4>
+                    <p>Machine learning models analyze data for anomalies, emotions, and potential health risks.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h4>Cloud Storage</h4>
+                    <p>Processed data is securely transmitted and stored in Firebase or ThingSpeak platforms.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h4>Alert System</h4>
+                    <p>Automated alerts are triggered when health thresholds are exceeded or emergencies detected.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture-section">
+            <h2>System Architecture</h2>
+            <div class="architecture-card">
+                <h3>Wearable Unit Architecture</h3>
+                <p>The portable monitoring device consists of an ESP32 microcontroller integrated with MAX30102 for heart rate and SpO2 monitoring, DS18B20 for temperature sensing, and SIM800L for GSM communication backup. The unit is powered by a 3.7V Li-ion battery with TP4056 charging circuit, ensuring 12-16 hours of continuous operation.</p>
+            </div>
+            <div class="architecture-card">
+                <h3>Home Monitoring Unit</h3>
+                <p>The stationary monitoring system utilizes Raspberry Pi 4 as the central processing unit, connected to ESP32-CAM modules for video capture. OpenCV and MediaPipe frameworks enable real-time face detection, emotion recognition, and fall detection through advanced computer vision algorithms.</p>
+            </div>
+            <div class="architecture-card">
+                <h3>Cloud Integration Layer</h3>
+                <p>Data transmission occurs through Wi-Fi as the primary channel, with GSM/GPRS as backup. Firebase serves as the real-time database, while ThingSpeak handles IoT analytics. IFTTT integration enables automated workflows and alert generation through multiple channels including SMS, email, and push notifications.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+			<p> As the project is in a early devolepement stage the tech stack may change. this page is only for referance and nothing mentioned here maybe final</p>
+            <p>&copy; 2025 Unified AI-Enhanced Elderly Monitoring System. Developed for remote health and safety monitoring.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                Advanced features combining medical-grade sensors with AI-powered analysis for comprehensive elderly care.
+            </p>
+        </div>
+    </footer>
+	
+    <script>
+        // Add smooth scrolling and animations
+        document.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.feature-card, .architecture-card, .tech-category, .detail-card, .workflow-step');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize card animations
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.feature-card, .architecture-card, .tech-category, .detail-card, .workflow-step');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>

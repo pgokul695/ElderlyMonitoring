@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Unified AI-Enhanced Elderly Monitoring System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #764ba2;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .feature-specs {
+            background: rgba(118, 75, 162, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .feature-specs h4 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .feature-specs ul {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .feature-specs li {
+            padding: 0.2rem 0;
+            border-left: 3px solid #764ba2;
+            padding-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .architecture-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .architecture-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .architecture-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .architecture-list {
+            list-style: none;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .architecture-list li {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .architecture-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fff;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🧓👩‍⚕️ ElderCare AI</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html" class="active">Features</a></li>
+                <li><a href="technology.html">Technology</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Comprehensive Feature Set</h1>
+            <p>Explore the advanced capabilities that make our elderly monitoring system a complete healthcare solution</p>
+        </div>
+
+        <div class="features">
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Medical-Grade Sensing</h3>
+                    <p>Precision healthcare monitoring with hospital-grade accuracy for reliable vital signs tracking in home environments.</p>
+                    <div class="feature-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>MAX30100/MAX30102 - Heart rate & SpO2 monitoring</li>
+                            <li>DS18B20 - Temperature sensor (±0.5°C accuracy)</li>
+                            <li>Real-time data sampling every 10 seconds</li>
+                            <li>Clinically validated threshold detection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Detection</h3>
+                    <p>Advanced computer vision and machine learning algorithms for comprehensive behavioral and health monitoring.</p>
+                    <div class="feature-specs">
+                        <h4>AI Capabilities:</h4>
+                        <ul>
+                            <li>MediaPipe Face Mesh - Facial expression analysis</li>
+                            <li>Pose estimation - Fall and posture detection</li>
+                            <li>Custom CNN models for emotion recognition</li>
+                            <li>TensorFlow Lite - On-device inference</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-time Dashboard</h3>
+                    <p>Comprehensive web-based monitoring interface with live data visualization and historical analysis.</p>
+                    <div class="feature-specs">
+                        <h4>Dashboard Features:</h4>
+                        <ul>
+                            <li>Live vitals display with trend analysis</li>
+                            <li>Daily, weekly, monthly health summaries</li>
+                            <li>Comprehensive alerts and events log</li>
+                            <li>Multi-device responsive design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Multi-Channel Alerts</h3>
+                    <p>Intelligent notification system with multiple communication channels for critical health events.</p>
+                    <div class="feature-specs">
+                        <h4>Alert Methods:</h4>
+                        <ul>
+                            <li>Firebase Functions with IFTTT integration</li>
+                            <li>Direct GSM SMS for critical alerts</li>
+                            <li>Email notifications with detailed reports</li>
+                            <li>Configurable threshold-based triggers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>24/7 Monitoring</h3>
+                    <p>Continuous surveillance capabilities with night vision and emergency response features.</p>
+                    <div class="feature-specs">
+                        <h4>Monitoring Features:</h4>
+                        <ul>
+                            <li>Optional night vision camera system</li>
+                            <li>Voice alert system with text-to-speech</li>
+                            <li>Emergency SOS button integration</li>
+                            <li>Automated distress call detection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Cost-Effective Solution</h3>
+                    <p>Affordable healthcare technology making advanced monitoring accessible to all families.</p>
+                    <div class="feature-specs">
+                        <h4>Cost Breakdown:</h4>
+                        <ul>
+                            <li>Sensor package: ₹1,500 - ₹2,500</li>
+                            <li>Camera AI system: ₹2,000 - ₹3,000</li>
+                            <li>Total system cost: ₹3,500 - ₹5,500</li>
+                            <li>Modular design for gradual upgrades</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture-section">
+            <h2 style="text-align: center; color: #764ba2; margin-bottom: 3rem;">System Architecture</h2>
+            <div class="architecture-grid">
+                <div class="architecture-card">
+                    <h3>🎒 On-Person Unit</h3>
+                    <ul class="architecture-list">
+                        <li>ESP32 microcontroller</li>
+                        <li>MAX30102 heart rate & SpO2 sensor</li>
+                        <li>DS18B20 temperature sensor</li>
+                        <li>SIM800L GSM module</li>
+                        <li>OLED display (optional)</li>
+                        <li>3.7V Li-ion battery with TP4056</li>
+                    </ul>
+                </div>
+                
+                <div class="architecture-card">
+                    <h3>🏠 In-Room Unit</h3>
+                    <ul class="architecture-list">
+                        <li>Raspberry Pi or ESP32-CAM</li>
+                        <li>IR temperature sensor</li>
+                        <li>Camera module with night vision</li>
+                        <li>Microphone for distress detection</li>
+                        <li>Wi-Fi connectivity</li>
+                        <li>Local processing capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="architecture-card">
+                    <h3>☁️ Cloud Services</h3>
+                    <ul class="architecture-list">
+                        <li>Firebase Realtime Database</li>
+                        <li>ThingSpeak data logging</li>
+                        <li>IFTTT automation platform</li>
+                        <li>Twilio SMS services</li>
+                        <li>Web dashboard hosting</li>
+                        <li>Data analytics and ML models</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Unified AI-Enhanced Elderly Monitoring System. Developed for remote health and safety monitoring.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                Advanced features combining medical-grade sensors with AI-powered analysis for comprehensive elderly care.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling and animations
+        document.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.feature-card, .architecture-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize card animations
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.feature-card, .architecture-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>
